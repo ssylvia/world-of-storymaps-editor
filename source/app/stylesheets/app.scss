@@ -1,11 +1,15 @@
 @import "base";
 @import "storymaps";
 
+body{
+	overflow: auto;
+}
+
 #form-item{
 	max-width: none;
 }
 
-#item-error{
+#item-error, .feature-text .alert{
 	display: none;
 }
 

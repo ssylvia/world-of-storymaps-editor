@@ -8,7 +8,7 @@
 		ArcGIS Application Item <small>(Enter URL or Item Id)</small>
 		<input id="form-item" type="text" name="item">
 		<div id="item-error" class="alert error icon-alert">
-			Item not recognized. Please enter a valid ArcGIS Online Item (<strong>82a953263017455cabb4e3d870e7050f</strong>) or a valid url (<strong>http://www.arcgis.com/home/item.html?id=82a953263017455cabb4e3d870e7050f</strong>).
+			Item not recognized. Please enter a valid ArcGIS Online Item (<strong>82a953263017455cabb4e3d870e7050f</strong>) or a valid url (<strong>http://www.arcgis.com/home/item.html?id=82a953263017455cabb4e3d870e7050f</strong>).<br>Also, make sure you are using an Web Map Applicaiton item.
 			<a id="item-error-close" href="" class="icon-close"></a>
 		</div>
 	</label>
@@ -23,16 +23,22 @@
 			<label>
 				Name
 				<input id="form-name" type="text" name="name">
+				<div id="name-error" class="alert error icon-alert">
+					Add name for story map application.
+				</div>
 			</label>
 
 			<label>
 				Description
 				<textarea id="form-description" rows="2"></textarea>
+				<div id="description-error" class="alert error icon-alert">
+					Add description for story map application.
+				</div>
 			</label>
 
 			<label>
 				Application Template
-				<select>
+				<select id="form-template">
 					<% data.config.applicationTemplates.each do |f| %>
 					<option value="<%= f %>"><%= f %></option>
 					<% end %>
@@ -42,11 +48,17 @@
 			<label>
 				Publisher
 				<input id="form-publisher" type="text" name="publisher">
+				<div id="publisher-error" class="alert error icon-alert">
+					Add publisher for story map application.
+				</div>
 			</label>
 
 			<label>
 				Application URL
 				<input id="form-url" type="text" name="url">
+				<div id="url-error" class="alert error icon-alert">
+					Add URL for story map application.
+				</div>
 			</label>
 
 			<img src="" alt="" id="thumbnail-preview">
@@ -54,9 +66,12 @@
 			<label>
 				Thumbnail URL
 				<input id="form-thumbnail" type="text" name="thumbnail">
+				<div id="thumbnail-error" class="alert error icon-alert">
+					Add thumbnail URL for story map application.
+				</div>
 			</label>
 
-			<button class="btn primary">Add Story Map</button>
+			<button id="item-add" class="btn primary">Add Story Map</button>
 
 		</div>
 

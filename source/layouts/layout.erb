@@ -99,7 +99,8 @@
 	<script type="text/javascript">
 
 	var configOptions = {
-		authorizedEditors: <%= data.config.authorizedEditors %>
+		authorizedEditors: <%= data.config.authorizedEditors %>,
+		featureService: "<%= data.config.featureService %>"
 	};
 
 	<% if isProduction %>
