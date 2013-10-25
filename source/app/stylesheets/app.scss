@@ -25,4 +25,18 @@
 #map{
 	width: 100%;
 	height: 500px;
+	border: 1px solid $lightest-gray;
+}
+
+#geocoder{
+	position: absolute;
+	top: 20px;
+	right: 28px;
+	z-index: 100;
+	input{
+		padding: 0;
+	}
+	input:focus{
+		border: none;
+	}
 }

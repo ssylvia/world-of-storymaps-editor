@@ -8,7 +8,7 @@
 		ArcGIS Application Item <small>(Enter URL or Item Id)</small>
 		<input id="form-item" type="text" name="item">
 		<div id="item-error" class="alert error icon-alert">
-			Item not recognized. Please enter a valid ArcGIS Online Item (82a953263017455cabb4e3d870e7050f) or a valid url (http://www.arcgis.com/home/item.html?id=82a953263017455cabb4e3d870e7050f).
+			Item not recognized. Please enter a valid ArcGIS Online Item (<strong>82a953263017455cabb4e3d870e7050f</strong>) or a valid url (<strong>http://www.arcgis.com/home/item.html?id=82a953263017455cabb4e3d870e7050f</strong>).
 			<a id="item-error-close" href="" class="icon-close"></a>
 		</div>
 	</label>
@@ -61,7 +61,9 @@
 		</div>
 
 		<div class="feature-block">
-			<div id="map"></div>
+			<div id="map">
+				<div id="geocoder"></div>
+			</div>
 		</div>
 	</div>
 
