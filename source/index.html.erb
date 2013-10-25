@@ -1,0 +1,68 @@
+---
+# Add Page Attributes Here
+---
+
+<div class="container">
+
+	<label>
+		ArcGIS Application Item <small>(Enter URL or Item Id)</small>
+		<input id="form-item" type="text" name="item">
+		<div id="item-error" class="alert error icon-alert">
+			Item not recognized. Please enter a valid ArcGIS Online Item (82a953263017455cabb4e3d870e7050f) or a valid url (http://www.arcgis.com/home/item.html?id=82a953263017455cabb4e3d870e7050f).
+			<a id="item-error-close" href="" class="icon-close"></a>
+		</div>
+	</label>
+	<button id="item-search" class="btn primary">Search</button>
+	
+	<hr>
+
+	<div class="feature">
+
+		<div class="feature-text">
+
+			<label>
+				Name
+				<input id="form-name" type="text" name="name">
+			</label>
+
+			<label>
+				Description
+				<textarea id="form-description" rows="2"></textarea>
+			</label>
+
+			<label>
+				Application Template
+				<select>
+					<% data.config.applicationTemplates.each do |f| %>
+					<option value="<%= f %>"><%= f %></option>
+					<% end %>
+				</select>
+			</label>
+
+			<label>
+				Publisher
+				<input id="form-publisher" type="text" name="publisher">
+			</label>
+
+			<label>
+				Application URL
+				<input id="form-url" type="text" name="url">
+			</label>
+
+			<img src="" alt="" id="thumbnail-preview">
+
+			<label>
+				Thumbnail URL
+				<input id="form-thumbnail" type="text" name="thumbnail">
+			</label>
+
+			<button class="btn primary">Add Story Map</button>
+
+		</div>
+
+		<div class="feature-block">
+			<div id="map"></div>
+		</div>
+	</div>
+
+</div>

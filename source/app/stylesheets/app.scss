@@ -1,0 +1,28 @@
+@import "base";
+@import "storymaps";
+
+#form-item{
+	max-width: none;
+}
+
+#item-error{
+	display: none;
+}
+
+.esriSignInDialog th, .esriSignInDialog td, .esriSignInDialog label{
+	padding: 0;
+	margin: 0;
+}
+
+.esriSignInDialog td br{
+	display: none;
+}
+
+.esriSignInDialog td{
+	padding-bottom: 15px;
+}
+
+#map{
+	width: 100%;
+	height: 500px;
+}

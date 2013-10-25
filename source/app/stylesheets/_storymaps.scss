@@ -1,0 +1,216 @@
+html, body{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#app-load-screen{
+	position: fixed;
+	background: {
+		color: $lightest-gray;
+	}
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+}
+
+#loader{
+	position: fixed;
+	top: 50%;
+	right: 50%
+}
+
+#loading-message{
+	position: fixed;
+	top: 50%;
+	right: 30%;
+	width: 40%;
+	text: {
+		align: center;
+	}
+	margin: {
+		top: 65px;
+	}
+}
+
+.region-right{
+	position: absolute;
+	right: 0;
+}
+
+.region-left, .region-center, .region-top, .region-bottom{
+	position: absolute;
+	left: 0;
+}
+
+.region-bottom{
+	bottom: 0;
+}
+
+#builder-menu, #banner{
+	width: 100%;
+}
+
+#view-content{
+	b, strong{
+		font-weight: bold;
+	}
+
+	i, em{
+		font-style: italic;
+	}
+
+	ol, ul{
+		padding: .2em 0 0 1.5em;
+		list-style-position: inside;
+	}
+
+	ol{
+		list-style-type: decimal;
+	}
+}
+
+// Hide builder toolbar in view mode
+#header.disabled{
+	display: none;
+}
+
+#banner{
+	background:{
+		color: $darker-gray;
+	}
+	height: 115px;
+	z-index: 100;
+	overflow: hidden;
+}
+
+#branding-wrapper{
+	height: 100%;
+	width: 200px;
+	float: right;
+	text: {
+		align: right;
+	}
+}
+
+#social{
+	margin:25px 25px 20px 0;
+}
+
+#smLink{
+	color: $white;
+	font: {
+		weight: bold;
+		family: $body-font;
+		size: .8em;
+	}
+	text: {
+		decoration: none;
+	}
+	outline:none;
+	&:hover{
+		text: {
+			decoration: underline;
+		}
+	}
+}
+
+.social-share{
+	color: $light-gray;
+	cursor: pointer;
+	&:hover{
+		color: $white;
+	}
+}
+
+.bitly-modal{
+	text-align: center;
+	height: auto;
+	overflow: hidden;
+	h4 {
+		text-align: left;
+	}
+}
+
+#bitly-link{
+	font: {
+		size: 26px;
+	}
+}
+
+#bitly-copy{
+	margin: {
+		top: 24px;
+	}
+}
+
+#logo{
+	margin: {
+		right: 25px;
+	}
+	border: none;
+	outline: none;
+}
+
+#logoImg{
+	border: none;
+	outline: none;
+}
+
+#title{
+	margin: 25px 25px 10px;
+	color: $white;
+	font: {
+		size: 1.3em;
+		weight: bold;
+	}
+}
+
+#subtitle{
+	margin: 0 25px;
+	color: $light-gray;
+	font: {
+		family: Georgia, serif;
+		size: 1em;
+	}
+}
+
+#legend-wrapper{
+	position: absolute;
+	width: 300px;
+	top: 0;
+	right: 25px;
+	z-index: 3;
+}
+
+#legend-toggle{
+	background-color: #888;
+	color: #fff;
+	padding: 8px 15px;
+	cursor: pointer;
+}
+
+#legend-pane{
+	background-color: #fff;
+	overflow: hidden;
+	border-right: 2px solid #888;
+	border-bottom: 2px solid #888;
+	border-left: 2px solid #888;
+}
+
+.legend{
+	padding: 15px;
+	max-height: 300px;
+	overflow: auto;
+}
+
+.legend:first-child{
+	display: block;
+}
+
+// Popup modifications
+.esriViewPopup .gallery{
+	height: auto;
+	max-height: 150px;
+}

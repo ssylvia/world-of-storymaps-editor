@@ -1,0 +1,24 @@
+# APP SETTINGS
+
+# Used in various strings in within live app
+appName: World of Story Maps Editor
+# Single word app identifier to be used in build files and build process
+appIdentifier: WorldOfStoryMapsEditor
+
+
+# ARCGIS JAVASCRIPT API
+
+# ArcGIS Javascript API Version
+apiVersion: '3.7'
+# Include Dijits CSS
+includeDijitCSS: true
+# Dojo Dijits CSS Theme (Choose: Claro, Tundra, Nihilo, Soria)
+dijitsTheme: tundra
+# Use Development version of ArcGIS JavaScript API
+useDevAPI: false
+
+
+# SOCIAL MEDIA APP IDS/API KEYS
+
+# Facebook Developers app id (Create new app ID at https://developers.facebook.com/apps)
+FacebookAppId: 475867552452282

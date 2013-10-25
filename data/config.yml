@@ -1,0 +1,53 @@
+# GOOGLE ANALYTICS
+
+# Include Google Analytics
+includeAnalytics: true
+# Google Analytics Tracking ID
+trackingId: UA-26529417-1
+
+
+# META & OPENGRAPH TAGS
+
+# title of story map
+metaTitle: App Title
+# Author of story map
+metaAuthor: Esri
+# Keywords to define story map
+metaKeywords: Story Map
+# Description of story map
+metaDescription: Add description for app
+# Permanent URL of app. Will be used as default URL when shared on Facebook and Twitter
+metaSocialURL: http://storymaps.esri.com
+# Permanent URL of app thumbnail. This is the thumbnail to be used when app is shared to Facebook and Twitter
+metaThumbnailURL: http://sample.com/thumbnail.png
+# Website/Organization's name to be used in sharing to Facebook and Twitter
+metaSiteName: Esri
+# Twitter Handle to be used while sharing app on Twitter
+metaTwitterHandle: EsriStoryMaps
+# Favicon URL
+metaFaviconURL: //resources.esri.com/favicon.ico
+# Shortcut URL to be used for iOS webapp
+metaShortcutURL: //resources.esri.com/favicon.ico
+
+
+# BANNER CONFIGURATION
+
+# App title, leave black to use webmap title
+title: Add title here
+# App subtitle, leave black to use webmap subtitle
+subtitle: Add a subtitle here!
+
+authorizedEditors:
+  - StoryMaps
+
+applicationTemplates:
+  - Custom
+  - Basic
+  - Countdown
+  - Compare
+  - Map Tour
+  - Playlist
+  - Shortlist
+  - Side Accordion
+  - Swipe/Spyglass
+  - Text and Legend
