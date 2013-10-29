@@ -5,7 +5,7 @@ body{
 	overflow: auto;
 }
 
-#form-item{
+#form-item, #form-item-search{
 	max-width: none;
 }
 
@@ -43,4 +43,17 @@ body{
 	input:focus{
 		border: none;
 	}
+}
+
+#item-add{
+	margin-right: 5px;
+}
+
+.sync-image, small{
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.results, .upload-message, .search-message, .edit-message, .delete-message{
+	display: none;
 }

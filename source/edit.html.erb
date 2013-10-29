@@ -5,16 +5,32 @@
 <div class="container">
 
 	<label>
-		ArcGIS Application Item <small>(Enter URL or Item Id)</small>
-		<input id="form-item" type="text" name="item">
+		Find Item <small>(Searches name, description, publisher, and template)</small>
+		<input id="form-item-search" type="text" name="item">
 		<div id="item-error" class="alert error icon-alert">
 			Item not recognized. Please enter a valid ArcGIS Online Item (<strong>82a953263017455cabb4e3d870e7050f</strong>) or a valid url (<strong>http://www.arcgis.com/home/item.html?id=82a953263017455cabb4e3d870e7050f</strong>).<br>Also, make sure you are using an Web Map Applicaiton item.
 			<a id="item-error-close" href="" class="icon-close"></a>
 		</div>
 	</label>
-	<button id="item-search" class="btn primary">Search</button>
+	<button id="item-search-submit" class="btn primary">Search</button>
 	<span class="search-message sync"><image class="sync-image" src="resources/images/sync.GIF"></image><small>Searcing</small></span>
 
+	<br><br><br>
+
+	<div class="results">
+		<table class="lined-rows bordered">
+			<thead>
+				<tr>
+					<td>Edit</td>
+					<td>Name</td>
+					<td>Description</td>
+					<td>Publisher</td>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	
 	<hr>
 
 	<div class="feature">
@@ -72,10 +88,14 @@
 				</div>
 			</label>
 
-			<button id="item-add" class="btn primary">Add Story App</button>
-			<span class="upload-message sync"><image class="sync-image" src="resources/images/sync.GIF"></image><small>Uploading Story</small></span>
-			<span class="upload-message success"><small style="color: #5b945a; font-weight: bold;">Upload Successful</small></span>
-			<span class="upload-message error"><small style="color: #c7552e; font-weight: bold;">Error</small></span>
+			<button id="item-edit" class="btn primary">Edit Story App</button>
+			<button id="item-delete" class="btn primary">Delete Story App</button>
+			<span class="edit-message sync"><image class="sync-image" src="resources/images/sync.GIF"></image><small>Editing Story</small></span>
+			<span class="edit-message success"><small style="color: #5b945a; font-weight: bold;">Edit Successful</small></span>
+			<span class="edit-message error"><small style="color: #c7552e; font-weight: bold;">Error</small></span>
+			<span class="delete-message sync"><image class="sync-image" src="resources/images/sync.GIF"></image><small>Deleting Story</small></span>
+			<span class="delete-message success"><small style="color: #5b945a; font-weight: bold;">Delete Successful</small></span>
+			<span class="delete-message error"><small style="color: #c7552e; font-weight: bold;">Error</small></span>
 
 		</div>
 

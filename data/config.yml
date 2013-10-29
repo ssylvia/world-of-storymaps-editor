@@ -9,13 +9,13 @@ trackingId: UA-26529417-1
 # META & OPENGRAPH TAGS
 
 # title of story map
-metaTitle: App Title
+metaTitle: World of Story Maps Editor
 # Author of story map
 metaAuthor: Esri
 # Keywords to define story map
 metaKeywords: Story Map
 # Description of story map
-metaDescription: Add description for app
+metaDescription: Editor
 # Permanent URL of app. Will be used as default URL when shared on Facebook and Twitter
 metaSocialURL: http://storymaps.esri.com
 # Permanent URL of app thumbnail. This is the thumbnail to be used when app is shared to Facebook and Twitter
