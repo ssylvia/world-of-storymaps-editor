@@ -37,7 +37,7 @@ title: Add title here
 # App subtitle, leave black to use webmap subtitle
 subtitle: Add a subtitle here!
 
-featureService: http://services.arcgis.com/nzS0F0zdNLvs7nc8/arcgis/rest/services/playlist_test/FeatureServer/0
+featureService: http://services.arcgis.com/nzS0F0zdNLvs7nc8/ArcGIS/rest/services/WorldOfStoryMaps/FeatureServer/0
 
 authorizedEditors:
   - StoryMaps

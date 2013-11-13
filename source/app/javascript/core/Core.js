@@ -24,7 +24,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 
 		function login()
 		{
-			_portal.signIn().then(function(result){
+			_portal.signIn().then(function(){
 				var load = false;
 				array.forEach(esri.id.credentials,function(user){
 					if($.inArray(user.userId,configOptions.authorizedEditors) >= 0){
@@ -124,7 +124,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 
 			_location = pt;
 
-			var movable = new MoveableGraphic(map,graphicsLayer,_tempLocation,function(graphic){
+			new MoveableGraphic(map,graphicsLayer,_tempLocation,function(graphic){
 				_location = graphic.geometry;
 			});
 
@@ -158,7 +158,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 			var query = new Query();
 			query.outFields = ["*"];
 			query.returnGeometry = true;
-			query.where = "Name LIKE '%" + str + "%' OR Template LIKE '%" + str + "%' OR Description LIKE '%" + str + "%' OR Publisher LIKE '%" + str + "%'";
+			query.where = "Name LIKE '%" + str + "%' OR TemplateText LIKE '%" + str + "%' OR Description LIKE '%" + str + "%' OR Publisher LIKE '%" + str + "%'";
 
 			var queryTask = new QueryTask(_storyLayer.url);
 			queryTask.execute(query,function(result){			
@@ -183,7 +183,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 						$("#form-publisher").val(item.Publisher);
 						$("#form-url").val(item.Story_URL);
 						$("#form-thumbnail").val(item.Image_URL);
-						$("#form-template").val(item.Template);
+						$("#form-template").val(item.TemplateText);
 						$("#thumbnail-preview").attr("src",item.Image_URL);
 						_tempLocation.setGeometry(_tempGraphic.geometry);
 
@@ -204,7 +204,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 		function queryItem(item)
 		{
 			$(".search-message").show();
-			var deferred = arcgisUtils.getItem(item).then(function(result){
+			arcgisUtils.getItem(item).then(function(result){
 				$(".search-message").hide();
 				var item = result.item;
 				console.log(item);
@@ -235,8 +235,8 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 					Publisher: $("#form-publisher").val(),
 					Story_URL: $("#form-url").val(),
 					Image_URL: $("#form-thumbnail").val(),
-					Template: $("#form-template").val()
-				}
+					TemplateText: $("#form-template").val()
+				};
 
 				var app = new Graphic(_location,null,attr);
 				console.log(app);
@@ -260,7 +260,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 						$(".upload-message").hide();
 						$(".upload-message.success").show();
 					}
-				},function(error){
+				},function(){
 					$(".upload-message").hide();
 					$(".upload-message.error").show();
 				});
@@ -271,14 +271,14 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 		{
 			if(errorCheck()){
 				var attr = {
-					FID: _tempGraphic.attributes.FID,
+					OBJECTID: _tempGraphic.attributes.OBJECTID,
 					Name: $("#form-name").val(),
 					Description: $("#form-description").val(),
 					Publisher: $("#form-publisher").val(),
 					Story_URL: $("#form-url").val(),
 					Image_URL: $("#form-thumbnail").val(),
-					Template: $("#form-template").val()
-				}
+					TemplateText: $("#form-template").val()
+				};
 
 				var app = new Graphic(_location,null,attr);
 
@@ -302,7 +302,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 						$(".edit-message").hide();
 						$(".edit-message.success").show();
 					}
-				},function(error){
+				},function(){
 					$(".edit-message").hide();
 					$(".edit-message.error").show();
 				});
@@ -333,7 +333,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 						$(".delete-message").hide();
 						$(".delete-message.success").show();
 					}
-				},function(error){
+				},function(){
 					$(".delete-message").hide();
 					$(".delete-message.error").show();
 				});
@@ -344,7 +344,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 		{
 			var noErrors = true;
 
-			if ($("#form-name").val() != ""){
+			if ($("#form-name").val() !== ""){
 				$("#name-error").hide();
 			}
 			else{
@@ -352,7 +352,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 				noErrors = false;
 			}
 
-			if ($("#form-description").val() != ""){
+			if ($("#form-description").val() !== ""){
 				$("#description-error").hide();
 			}
 			else{
@@ -360,7 +360,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 				noErrors = false;
 			}
 
-			if ($("#form-publisher").val() != ""){
+			if ($("#form-publisher").val() !== ""){
 				$("#publisher-error").hide();
 			}
 			else{
@@ -368,7 +368,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 				noErrors = false;
 			}
 
-			if ($("#form-url").val() != ""){
+			if ($("#form-url").val() !== ""){
 				$("#url-error").hide();
 			}
 			else{
@@ -376,7 +376,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 				noErrors = false;
 			}
 
-			if ($("#form-thumbnail").val() != ""){
+			if ($("#form-thumbnail").val() !== ""){
 				$("#thumbnail-error").hide();
 			}
 			else{

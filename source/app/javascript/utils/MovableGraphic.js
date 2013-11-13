@@ -24,7 +24,7 @@ define(["dojo/has", "dojo/touch", "dojo/on"], function(has, touch, on)
 			dojo.forEach(_events, function(event){
 				dojo.disconnect(event);
 			});
-		}
+		};
 
 		function init()
 		{
@@ -48,7 +48,7 @@ define(["dojo/has", "dojo/touch", "dojo/on"], function(has, touch, on)
 				}
 			});
 
-			var event4 = touch.release(layer._div.rawNode, function(event){
+			var event4 = touch.release(layer._div.rawNode, function(){
 				map.enablePan();
 				_editPointLayer = false;
 				if( onMoveEndCallback && graphic.hasBeenMoved )
@@ -74,5 +74,5 @@ define(["dojo/has", "dojo/touch", "dojo/on"], function(has, touch, on)
 				graphic.hasBeenMoved = true;
 			}
 		}
-	}
+	};
 });
