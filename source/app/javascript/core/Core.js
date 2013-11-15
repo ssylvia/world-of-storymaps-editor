@@ -154,11 +154,12 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 
 		function searchItems(str)
 		{
+			var searchStr = str.replace("'","''");
 			$(".search-message").show();
 			var query = new Query();
 			query.outFields = ["*"];
 			query.returnGeometry = true;
-			query.where = "Name LIKE '%" + str + "%' OR TemplateText LIKE '%" + str + "%' OR Description LIKE '%" + str + "%' OR Publisher LIKE '%" + str + "%'";
+			query.where = "Name LIKE '%" + searchStr + "%' OR TemplateText LIKE '%" + searchStr + "%' OR Description LIKE '%" + searchStr + "%' OR Publisher LIKE '%" + searchStr + "%'";
 
 			var queryTask = new QueryTask(_storyLayer.url);
 			queryTask.execute(query,function(result){			
@@ -186,6 +187,8 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 						$("#form-template").val(item.TemplateText);
 						$("#thumbnail-preview").attr("src",item.Image_URL);
 						_tempLocation.setGeometry(_tempGraphic.geometry);
+						_location = _tempGraphic.geometry;
+						map.centerAt(_tempGraphic.geometry);
 
 						map.resize();
 						map.reposition();
@@ -212,7 +215,7 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 					var thumbnail = "http://www.arcgis.com/sharing/rest/content/items/" + item.id + "/info/" + item.thumbnail;
 					$("#item-error").hide();
 					$("#form-name").val(item.title);
-					$("#form-description").val(item.description);
+					$("#form-description").val(item.snippet);
 					$("#form-publisher").val(item.owner);
 					$("#form-url").val(item.url);
 					$("#form-thumbnail").val(thumbnail);
@@ -239,7 +242,6 @@ define(["storymaps/utils/MovableGraphic","esri/layers/FeatureLayer","dojo/_base/
 				};
 
 				var app = new Graphic(_location,null,attr);
-				console.log(app);
 
 				$(".upload-message").hide();
 				$(".upload-message.sync").show();
